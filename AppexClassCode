@@ -1,0 +1,39 @@
+public class EmailManager{
+    //public meethod
+    puclic void sendMail(String address, String subject, String body){
+        //Create an email object
+        Messaging.SingleEmailMessage mail = new messaging.SingleEmailMessage();
+        String[] toaddress = new String[] {address};
+        mail.setToaddress(toaddress);
+        mail.setSubject(subject);
+        mail.setplainTextBody(body);
+
+        //Pass the email meassage to the built-in sendEmail meethod
+        // of the messaging class
+        Messaging.SingleEmailResults results = Messaging.sendEmail(new Messaging.SingleEmailMesage[] {mail});
+
+        //call the helper message to inspect the returned result
+        inspectResults(results);
+
+    }
+
+    // Helper meethod
+    private static Boolean inspectResults(Messaging.SendEmailResult[] results){
+        Boolean sendResult = True;
+
+        for(Messaging.SendEmailResult res : results){
+            if(res.isSuccess()){
+                System.debug('Email sent successfully')
+            }
+
+            else{
+                sendResult = False;
+                System.debug('The following error occured:' + res.getErrors())
+            }
+
+        }
+
+        return sendResult;
+
+    }
+}

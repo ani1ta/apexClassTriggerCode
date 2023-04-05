@@ -1,0 +1,18 @@
+ List<Contact> conList = new List<Contact>{
+        new Contact(FirtName='Annie', LastName='Mishra', Department='Finance'),
+            new Contact(FirtName='Kay', LastName='David', Department='Technology'),
+            new Contact(FirtName='Annie', LastName='Mishra', Department='Finance'),
+            new Contact(FirtName='Annie', LastName='Mishra', Department='Education')};
+  
+     insert conList;
+    
+    List<Contact> listToUpdate = new List<Contact>();
+    
+    for(Contact con:conList){
+        if(con.Department == 'Finance'){
+            con.Title == 'Finance Analyst';
+            listToUpdate.add(con);
+        }
+    }
+    
+    update listToUpdate;

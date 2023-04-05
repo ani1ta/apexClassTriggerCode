@@ -1,0 +1,21 @@
+// Create new element in one line
+List<String> colors = new List<String>{'green', 'Yellow', 'Blue'};
+
+// add more elements in list
+List<String> moreColors = new List<String>();
+moreColors.add('red')
+moreColors.add('purple')
+
+
+// Get elements from a list
+
+String color1 = moreColors.Get(0);
+String color2 = moreColors[0];
+System.assertEquals(color1, color2);
+
+//Iterate over the read elements
+
+for(integer i=0; i<Colors.size(); i++){
+    // write the value to the debug log
+    System.debug(colors[i])
+}
